@@ -2,6 +2,21 @@
 
 A responsive movie catalog application built on **Laravel 5.2** and **PHP 5.6**, fully containerized with **Docker**. This project demonstrates how to modernize a legacy stack to consume external APIs (OMDb), manage complex database relationships, and deliver a smooth user experience with shimmer loading effects.
 
+### 1. Login Page
+<img width="1869" height="934" alt="Screenshot From 2026-02-16 13-05-43" src="https://github.com/user-attachments/assets/85969745-9fa6-4395-bcb1-e36d6353469f" />
+
+### 2. Register Page
+<img width="1869" height="934" alt="Screenshot From 2026-02-16 13-05-50" src="https://github.com/user-attachments/assets/7ee73a46-5e73-423c-a2de-7e980bfed359" />
+
+### 3. Main Page
+<img width="1869" height="934" alt="Screenshot From 2026-02-16 13-05-22" src="https://github.com/user-attachments/assets/8a3fb26f-5e39-4ca1-b6e4-c80e64fa1bbe" />
+
+### 4. Details Page
+<img width="1869" height="934" alt="Screenshot From 2026-02-16 13-05-37" src="https://github.com/user-attachments/assets/62c5a528-419e-433b-b4ee-e527da669832" />
+
+### 5. Favorite Page
+<img width="1869" height="934" alt="Screenshot From 2026-02-16 13-05-31" src="https://github.com/user-attachments/assets/e9ad276a-7e67-4ddd-9b12-81c13a22076c" />
+
 ---
 
 ## 🛠 Tech Stack
