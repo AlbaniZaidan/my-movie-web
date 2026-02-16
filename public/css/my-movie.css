@@ -1,0 +1,598 @@
+body {
+    margin: 0;
+    font-family: 'Lato';
+    background-color: #000;
+    color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px; /* Limits width on huge screens */
+    margin: 0 auto;
+}
+
+.container-center{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.topnav {
+    padding: 10px;
+    background-color: #121212;
+    box-shadow: inset 1px -3px 2px #242424;
+    overflow: visible; 
+    position: relative; 
+    z-index: 999;
+    margin-bottom: 20px;
+}
+
+.topnav-center {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;     
+    
+    display: flex;         
+    justify-content: space-between;
+    align-items: center;      
+}
+
+.navbar-brand {
+    background: #f5c518;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+
+.nav-link {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #f5c518;
+    background-color: transparent;
+}
+
+/* --- SEARCH BAR CONTAINER --- */
+.nav-search-wrapper {
+    flex: 1;
+    max-width: 600px; /* Made it wider like Google */
+    margin: 0 30px;   /* More space from the logo */
+}
+
+/* --- THE SEARCH FORM (The Pill) --- */
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #303134; /* Google's Dark Mode Grey */
+    border: 1px solid #5f6368; /* Subtle border */
+    border-radius: 24px;       /* perfectly round pill */
+    padding: 5px 15px;
+    height: 44px;              /* Fixed height to look substantial */
+    width: 100%;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect like Google */
+.search-form:hover {
+    background-color: #3c4043; 
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    border-color: transparent;
+}
+
+/* Focus effect (When typing) */
+.search-form:focus-within {
+    background-color: #303134;
+    border-color: #f5c518; /* Your Yellow Theme */
+    box-shadow: 0 1px 6px rgba(245, 197, 24, 0.3);
+}
+
+/* --- THE INPUT FIELD (Force Remove White Box) --- */
+.search-form input {
+    background-color: transparent !important; /* FORCE Transparent */
+    border: none !important;                  /* Remove default border */
+    color: #e8eaed !important;                /* Light grey text */
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    box-shadow: none !important;              /* Remove Bootstrap glow */
+    padding: 0 10px;
+}
+
+/* Placeholder text color */
+.search-form input::placeholder {
+    color: #9aa0a6;
+}
+
+/* --- THE SEARCH BUTTON --- */
+.search-form button {
+    background: transparent;
+    border: none;
+    color: #9aa0a6;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    color: #f5c518;
+}
+
+/* --- LIVE SEARCH DROPDOWN --- */
+.search-dropdown {
+    position: absolute;
+    top: 100%; /* Puts it directly below the input */
+    left: 0;
+    width: 100%;
+    background-color: #2a2a2a; /* Slightly lighter than bg */
+    border: 1px solid #333;
+    border-top: none;
+    border-radius: 0 0 15px 15px; /* Round bottom corners */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    text-decoration: none;
+    color: #f2f2f2;
+    transition: background 0.2s;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item:hover {
+    background-color: #3a3a3a; /* Highlight color */
+    color: #f5c518; /* Yellow text on hover */
+    text-decoration: none;
+}
+
+.search-item img {
+    width: 30px;
+    height: 45px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+    background: #000;
+}
+
+.search-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.search-year {
+    font-size: 12px;
+    color: #888;
+}
+
+
+.footer {
+    padding: 10px;
+    text-align: center;
+    background: #121212;
+}
+
+/* Movies Card Styles */
+
+#movie-content.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+}
+
+/* Column Reset for Flexbox */
+#movie-content.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 0px 15px;
+}
+
+/* --- CARD STYLING --- */
+.movie-card {
+    margin: 0;
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    text-decoration: none !important;
+    color: #fff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+/* Aspect Ratio Wrapper for Poster */
+.poster-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 150%; /* This forces the height to always be 1.5x the width */
+    background: #000;
+    overflow: hidden;
+}
+
+.poster-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-info {
+    height: 110px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #1f1f1f;
+    border-top: 1px solid #333;
+}
+
+.movie-info h4 {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+.movie-meta {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: auto; 
+    align-items: center;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.rating-badge {
+    margin: 5px 0;
+    width: fit-content;
+    background: #f5c518;
+    color: #000;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+
+/* --- SKELETON / SHIMMER --- */
+.skeleton-card {
+    width: 200px;
+    height: 100%;
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@keyframes shimmer {
+    0% { background-position: -468px 0; }
+    100% { background-position: 468px 0; }
+}
+
+.shimmer-wrapper {
+    background: #2a2a2a;
+    background-image: linear-gradient(to right, #2a2a2a 0%, #3a3a3a 20%, #2a2a2a 40%, #2a2a2a 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 300px;
+    animation: shimmer 1.5s infinite linear forwards;
+}
+
+.skeleton-poster {
+    width: 100%;
+    height: 300px;
+}
+
+.skeleton-text {
+    height: 16px;
+    margin: 15px;
+    border-radius: 4px;
+}
+
+.skeleton-text.short {
+    width: 60%;
+    margin-top: 0;
+}
+
+/* --- ANIMATIONS --- */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- DETAIL PAGE SPECIFIC CSS --- */
+    
+.detail-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    color: #f2f2f2;
+}
+
+.detail-title {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.detail-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.detail-rating-badge {
+    background: #f5c518;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.detail-star-score {
+    font-weight: bold;
+    color: #f5c518;
+    font-size: 16px;
+}
+
+/* --- HERO SPLIT LAYOUT --- */
+.detail-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background: #1f1f1f; /* Matching your .movie-card background */
+    padding: 0; /* No padding on container, padding inside info */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Left Side: Poster */
+.detail-poster-wrapper {
+    flex: 0 0 300px; /* Fixed width as requested */
+    background: #000;
+}
+
+.detail-poster-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Right Side: Info */
+.detail-info {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Genre Pills */
+.genre-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.genre-pill {
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 13px;
+    color: #f2f2f2;
+}
+
+/* Plot Text */
+.plot-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Button Styling */
+.btn-favorite {
+    background-color: #f5c518; /* Matching your badge color */
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+.btn-favorite:hover {
+    background-color: #d4a810;
+}
+
+/* Credits Section */
+.credits-box {
+    margin-top: auto; /* Pushes to bottom */
+    border-top: 1px solid #333; /* Matching your .movie-info border */
+    padding-top: 15px;
+    font-size: 14px;
+}
+.credit-row {
+    display: flex;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 8px;
+}
+.credit-label {
+    font-weight: bold;
+    width: 80px;
+    flex-shrink: 0;
+    color: #fff;
+}
+.credit-value {
+    color: #5799ef; /* Classic Link Blue */
+}
+
+/* --- AUTH PAGES (Login / Register) --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #f2f2f2;
+    
+    /* FIX 1: Ensure everything inside aligns correctly */
+    box-sizing: border-box; 
+}
+
+.auth-title {
+    margin-top: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.auth-subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* FIX 2: Wrapper for inputs to control spacing perfectly */
+.form-group {
+    margin-bottom: 15px; /* Consistent spacing */
+    width: 100%;
+}
+
+/* Styled Inputs */
+.auth-input {
+    /* FIX 3: Force Width Calculation */
+    box-sizing: border-box !important; 
+    width: 100%;
+    
+    padding: 12px 15px;
+    height: 45px; /* Fixed height for consistency */
+    background-color: #121212;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    margin: 0; /* Remove default browser margins */
+}
+
+.auth-input:focus {
+    border-color: #f5c518;
+}
+
+/* Styled Button */
+.auth-btn {
+    /* FIX 4: Match Input Width Exactly */
+    box-sizing: border-box !important;
+    width: 100%;
+    
+    height: 45px; /* Match input height */
+    padding: 0;   /* Use flex centering instead of padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #f5c518;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background-color: #d4a810;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+.auth-link {
+    color: #f5c518;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Error Message Style */
+.alert-warning {
+    background-color: rgba(245, 197, 24, 0.1);
+    border: 1px solid #f5c518;
+    color: #f5c518;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 13px;
+}
